@@ -22,17 +22,21 @@ function addItemToList(item) {
         lista.appendChild(listItem)
         registerTasks(item)
     } else {
-        alert("Não há nada para adiconar") 
+        nothingToAdd()
     }
-    
+}
 
-    
-    
+function removeToList(event) {
+
 }
 
 function registerTasks(task) {
     localStorage.getItem("tasks") ?? []
-    task == '' ? console.log("Não há nada para adicionar") : localStorage.setItem("tasks", JSON.stringify(task))
+    task == '' ? nothingToAdd() : localStorage.setItem("tasks", JSON.stringify(task))
+}
+
+function nothingToAdd() {
+    alert("Não há nada para adicionar")
 }
 
 document.getElementById('btn-add-item').addEventListener("click", () => getItem())
