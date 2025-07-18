@@ -1,13 +1,6 @@
 let itens = []
 localStorage.getItem("Tasks") ? '' : []
 
-
-// só uma brincadeira
-let test = () => {
-    document.body.style.backgroundColor = 'black'
-}
-document.onload = test()
-
 function getItem() {
     let getItem = document.getElementById("input-add-item").value
     itens.push(getItem)
